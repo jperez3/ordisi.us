@@ -24,7 +24,7 @@ hideHeader = false
 # Intro on main page, content is markdown
 homeIntroTitle = "not another tech blog"
 homeIntroContent = """
-A broader blog about technology and one career in tech
+Hey hey! My name is Joe and I'm an engineer who specializes in cloud infrastructure
 """
 
 # Collection to display on home
@@ -62,8 +62,9 @@ name = "posts"
 url = "/posts"
 
 [[params.menu]]
-name = "about"
-url = "/about"
+name = "resume"
+url = "/resume"
+
 
 # Syntax highlight on code blocks
 [markup]
