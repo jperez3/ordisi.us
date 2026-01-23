@@ -1,4 +1,4 @@
-name: GitHub Pages
+name: Hugo Blog - Ordisi
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-22.04
     defaults:
       run:
-        working-directory: .app/blog
+        working-directory: app/blog
     env:
       HUGO_CACHEDIR: /tmp/hugo_cache
     concurrency:
