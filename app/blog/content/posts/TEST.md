@@ -1,7 +1,7 @@
 ---
 title: "something"
 author: "Joe"
-authorAvatarPath: "/avatar.jpeg"
+authorAvatarPath: "images/avatar.jpg"
 date: "2025-01-13"
 summary: "someting"
 description: "someting"
@@ -12,7 +12,6 @@ math: true
 tags: ["one", "two"]
 showTags: false
 hideBackToTop: false
-# fediverse: "@username@instance.url"
 ---
 
 
@@ -26,3 +25,8 @@ blah blah blah
 * one
 * two
 * three
+
+
+```bash
+$ terraform apply
+```

@@ -8,14 +8,14 @@ path = "github.com/tomfran/typo"
 
 
 # Google analytics code
-googleAnalytics = "G-xxxxxxxxx"
+googleAnalytics = "G-QS6TXS6WHV"
 
 [taxonomies]
 tag = 'tags'
 
 [params]
 # Meta description
-description = "A Tech Blog"
+description = "They'll let anyone blog these days"
 
 # Appearance settings
 theme = 'auto'
@@ -23,9 +23,9 @@ colorPalette = 'default'
 hideHeader = false
 
 # Intro on main page, content is markdown
-homeIntroTitle = 'Hi!'
+homeIntroTitle = "not another tech blog"
 homeIntroContent = """
-My very long home intro
+A broader blog about technology and one career in tech
 """
 
 # Collection to display on home
@@ -70,3 +70,4 @@ url = "/about"
 [markup]
 [markup.highlight]
 noClasses = false
+style = 'aura-theme-dark'
