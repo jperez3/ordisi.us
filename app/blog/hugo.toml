@@ -2,13 +2,12 @@ baseURL = 'https://ordisi.us/'
 languageCode = 'en-us'
 title = 'Ordisi'
 
+# Google analytics code
+googleAnalytics = "G-QS6TXS6WHV"
+
 [module]
 [[module.imports]]
 path = "github.com/tomfran/typo"
-
-
-# Google analytics code
-googleAnalytics = "G-QS6TXS6WHV"
 
 [taxonomies]
 tag = 'tags'
