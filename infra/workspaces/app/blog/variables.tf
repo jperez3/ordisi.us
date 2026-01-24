@@ -16,13 +16,11 @@ variable "cloudflare_account_id" {
 
 variable "r2_access_key" {
   description = "cloudflare r2 access key"
-  type        = string
   sensitive   = true
 }
 
 variable "r2_secret_key" {
   description = "cloudflare r2 secret access key"
-  type        = string
   sensitive   = true
 }
 
