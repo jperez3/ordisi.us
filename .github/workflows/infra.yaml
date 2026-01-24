@@ -30,7 +30,7 @@ jobs:
         id: init
         run: tofu init
         env:
-          env: 'prod'
+          TF_VAR_env: 'prod'
           TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_cloudflare_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           TF_VAR_r2_access_key: ${{ secrets.R2_ACCESS_KEY }}
@@ -44,7 +44,7 @@ jobs:
         id: plan
         run: tofu plan -no-color
         env:
-          env: 'prod'
+          TF_VAR_env: 'prod'
           TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_cloudflare_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           TF_VAR_r2_access_key: ${{ secrets.R2_ACCESS_KEY }}
