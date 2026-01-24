@@ -1,0 +1,26 @@
+name: Spellcheck Action
+on:
+  pull_request:
+
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Get all changed markdown files
+        uses: tj-actions/changed-files@v47
+        id: changed_files
+        with:
+          files: |
+             **.md
+
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@v0
+        with:
+          task_name: Markdown
+          source_files: ${{ steps.changed_files.outputs.all_changed_files }}

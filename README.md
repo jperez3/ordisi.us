@@ -58,3 +58,21 @@
 
 ### Pre-Commit
 1. Testing pre-commit changes: `pre-commit run -a`
+
+### Infra
+
+* Example `prod.tfvars`:
+
+```bash
+env                   = "prod"
+cloudflare_api_token  = "CLOUDFLAREAPITOKENGOESHERE"
+cloudflare_account_id = "CLOUDFLAREACCOUNTIDGOESHERE"
+r2_access_key         = "R2ACCESSKEYGOESHERE"
+r2_secret_key         = "R2SECRETKEYGOESHERE"           #pragma: allowlist secret
+```
+
+
+### Resources
+
+* [GHA - Spellcheck](https://github.com/rojopolis/spellcheck-github-actions)
+* [GHA - Changed Files](https://github.com/tj-actions/changed-files)

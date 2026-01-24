@@ -1,12 +1,9 @@
 name: Hugo Blog - Ordisi
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
     paths:
       - app/blog/**
-  pull_request:
 
 jobs:
   build:
@@ -19,7 +16,8 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout
+        uses: actions/checkout@v6
         with:
           submodules: true
           fetch-depth: 0

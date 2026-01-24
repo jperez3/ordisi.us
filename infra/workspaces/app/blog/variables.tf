@@ -6,6 +6,7 @@ variable "env" {
 variable "cloudflare_api_token" {
   description = "cloudflare API token for provisioning resources"
   type        = string
+  sensitive   = true
 }
 
 variable "cloudflare_account_id" {
@@ -16,11 +17,13 @@ variable "cloudflare_account_id" {
 variable "r2_access_key" {
   description = "cloudflare r2 access key"
   type        = string
+  sensitive   = true
 }
 
 variable "r2_secret_key" {
   description = "cloudflare r2 secret access key"
   type        = string
+  sensitive   = true
 }
 
 variable "domain_name" {
