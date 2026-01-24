@@ -4,6 +4,8 @@ on:
     paths:
       - infra/workspaces/**
 
+env:
+  WORKING_DIR: infra/workspaces/app/blog
 jobs:
   build:
     if: github.repository_owner == 'jperez3'
@@ -11,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: infra/workspaces/app/blog
+        working-directory: ${{ env.tf_actions_working_dir }}
     permissions:
       pull-requests: write
     environment: prod
@@ -97,7 +99,7 @@ jobs:
 
             </details>
 
-            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.WORKING_DIR }}\`, Workflow: \`${{ github.workflow }}\`*`;
 
             // 3. If we have a comment, update it, otherwise create a new one
             if (botComment) {
