@@ -12,6 +12,8 @@ jobs:
     defaults:
       run:
         working-directory: infra/workspaces/app/blog
+    permissions:
+      pull-requests: write
     environment: prod
     steps:
       - name: Checkout
