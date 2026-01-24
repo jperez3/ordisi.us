@@ -6,6 +6,7 @@ variable "env" {
 variable "cloudflare_api_token" {
   description = "cloudflare API token for provisioning resources"
   type        = string
+  sensitive   = true
 }
 
 variable "cloudflare_account_id" {
