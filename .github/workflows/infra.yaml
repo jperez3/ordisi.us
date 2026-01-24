@@ -32,7 +32,7 @@ jobs:
           tofu init \
             -backend-config="access_key=${{ secrets.R2_ACCESS_KEY }}" \
             -backend-config=""secret_key=${{ secrets.R2_SECRET_KEY }}" \
-            -backend-config="endpoints={ s3 = "https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com" }"
+            -backend-config="endpoints={s3=\"https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com\"}"
         env:
           TF_VAR_env: 'prod'
           TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
