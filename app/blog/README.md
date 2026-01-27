@@ -9,11 +9,11 @@
 
 ### Pre-Flight
 
-#### Dev Container
+#### Dev Container (Golden Path)
 1. In VSCode, press `command+shift+p`
 2. Select "Dev Containers: Reopen in Container"
 
-#### Local
+#### Local (Alternative)
 1. Install tools: `brew install hugo opentofu pre-commit detect-secrets`
 
 ### Create new post

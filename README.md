@@ -62,6 +62,15 @@
 2. Validate changes by browsing to: http://localhost:1313/
 
 ### Infrastructure
+
+#### Github Actions (Golden Path)
+1. Make changes to workspace at `infra/workspaces/app/blog`
+2. Check in code + create a PR
+
+Github actions will trigger a workflow which will initialize the workspace and output the `plan` as a PR comment. If the plan looks good, you can proceed with a review, approval and merge to `main`. This will trigger a `tofu apply` on the workspace.
+
+#### Local Iteration (Alternative)
+
 1. In terminal, browse to: `infra/workspaces/app/blog`
 2. Create `prod.tfvars` file and update values:
 
@@ -73,10 +82,13 @@ r2_access_key         = "R2ACCESSKEYGOESHERE"
 r2_secret_key         = "R2SECRETKEYGOESHERE"           #pragma: allowlist secret
 ```
 _Note: Cloudflare does not offer OIDC/SSO similar to AWS_
+
 3. Make changes to terraform files in `infra/workspaces/app/blog` and save
 4. Initialize infrastructure: `tofu init -var-file=prod.tfvars`
-5. See pending changes: `tofu plan -var-file=prod.tfvars`
+5. Review pending changes: `tofu plan -var-file=prod.tfvars`
+6. Check in code + create a PR
 
+Github actions will trigger a workflow which will initialize the workspace and output the `plan` as a PR comment. If the plan looks good, you can proceed with a review, approval and merge to `main`. This will trigger a `tofu apply` on the workspace.
 
 ### Creating PR
 
@@ -106,8 +118,19 @@ _Note: Cloudflare does not offer OIDC/SSO similar to AWS_
 
 ## Tools
 
-### Pre-Commit
-1. Testing pre-commit changes: `pre-commit run -a`
+#### Dev Containers
+
+* Description: dev containers is a configured development environment to help engineers move more quickly between repos. The local development requirements are already included, so the engineer doesn't have to worry if they have the right packages installed or the supported version
+
+
+#### OpenTofu
+
+* Description: OpenTofu is a fork of Terraform and is used to manage cloud resource in IaC
+
+#### Pre-Commit
+
+* Description: pre-commit is a tool used to check various code and security requirements prior to pushing to github. This helps the feedback loop by catching problems faster
+* Testing pre-commit changes: `pre-commit run -a`
 
 
 
