@@ -1,4 +1,4 @@
-### Ticket Number:
+### Ticket Number: [Ticket Link](https://something/ticket-number)
 
 
 ### Description
