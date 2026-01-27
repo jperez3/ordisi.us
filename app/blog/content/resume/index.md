@@ -3,7 +3,7 @@ joe@ordisius.com • [LinkedIn](https://https://www.linkedin.com/in/joe--perez/)
 
 **Senior Site Reliability Engineer – Cloud‑Native & IaC Specialist**
 
-Results‑driven engineer with 10 years designing, automating, and scaling cloud platforms. Expert in containerised workloads, Terraform‑based Infrastructure as Code, and cost‑optimisation strategies that have saved > $500k annually. Passionate about building resilient, developer‑centric pipelines that accelerate delivery from weeks to minutes.
+Results‑driven engineer with 10+ years designing, automating, and scaling cloud platforms. Expert in containerised workloads, Terraform‑based Infrastructure as Code, and cost‑optimisation strategies that have saved > $500k annually. Passionate about building resilient, developer‑centric pipelines that accelerate delivery from weeks to minutes.
 
 ---
 
