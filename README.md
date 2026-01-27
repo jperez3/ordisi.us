@@ -100,7 +100,7 @@ _Note: Cloudflare does not offer OIDC/SSO similar to AWS_
 
 ### Spellcheck
 
-* Workflow name: `markdown_spellcheck.ymal`
+* Workflow name: `markdown_spellcheck.yaml`
 * Description: When a PR is created, this workflow will run a spellcheck on changes to markdown files. If there are spelling mistakes, the job will fail. If a word causes a failure, but is not actually a typo, it can be added to `.spellcheck-wordlist.txt`
 
 
