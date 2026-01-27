@@ -13,7 +13,7 @@ jobs:
   build:
     if: github.repository_owner == 'jperez3'
     name: Infra
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     defaults:
       run:
         working-directory: ${{ env.WORKING_DIR }}
@@ -22,12 +22,12 @@ jobs:
     environment: prod
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 #v6.0.1
         with:
           fetch-depth: 0
 
       - name: Setup OpenTofu
-        uses: opentofu/setup-opentofu@v1
+        uses: opentofu/setup-opentofu@9d84900f3238fab8cd84ce47d658d25dd008be2f #v1.0.8
 
       - name: OpenTofu fmt
         id: fmt
@@ -72,7 +72,7 @@ jobs:
           TF_VAR_r2_secret_key: ${{ secrets.R2_SECRET_KEY }}
 
       - name: Add/Update PR comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd #v8.0.0
         if: github.event_name == 'pull_request'
         env:
           PLAN: "tofu\n${{ steps.plan.outputs.stdout }}"
