@@ -1,5 +1,5 @@
 # Joe Perez
-joe@ordisius.com • [LinkedIn](https://https://www.linkedin.com/in/joe--perez/) • [Github](https://github.com/jperez3) • [Portfolio](https://github.com/jperez3/ordisi.us)
+joe@ordisius.com • [LinkedIn](https://www.linkedin.com/in/joe--perez/) • [Github](https://github.com/jperez3) • [Portfolio](https://github.com/jperez3/ordisi.us)
 
 **Senior Site Reliability Engineer – Cloud‑Native & IaC Specialist**
 
