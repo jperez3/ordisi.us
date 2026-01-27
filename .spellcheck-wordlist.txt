@@ -66,3 +66,4 @@ txt
 wordlist
 workspaces
 yaml
+theindiecoder
