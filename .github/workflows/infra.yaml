@@ -13,7 +13,7 @@ jobs:
   build:
     if: github.repository_owner == 'jperez3'
     name: Infra
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-24.04
     defaults:
       run:
         working-directory: ${{ env.WORKING_DIR }}
