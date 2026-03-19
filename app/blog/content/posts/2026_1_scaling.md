@@ -13,7 +13,7 @@ tags: ["iac", "terraform"]
 showTags: false
 hideBackToTop: true
 ---
-
+![thailand](https://static.taccoform.com/header_ord_031926.jpg)
 
 
 When a company starts their infrastructure-as-code journey in AWS (or other cloud providers), they usually draw a line between each environment. This often starts with the creation of a VPC, then compute and storage for a new product or service. As the business grows, more resources are created and environments diverge (intentionally and not). Before long, the infrastructure becomes a mess to maintain and the tool gets blamed as inadequate. The reality is that a lack of proper planning and execution contributed to the problems.
