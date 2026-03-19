@@ -21,7 +21,7 @@ When a company starts their infrastructure-as-code journey in AWS (or other clou
 
 
 
-### Hierarchy of Resources
+# Hierarchy of Resources
 
 In providers like AWS, there's a hierarchy of resources that need to be created in a specific order to succeed (aka dependencies). For example, you need to create a public DNS zone prior to adding DNS records to the zone. This is a bit of a read-between-the-lines thing in AWS as you familiarize yourself with the cloud provider.
 
@@ -32,7 +32,7 @@ With that in mind, you'll want to put the global resources you want in every acc
 
 
 
-### Directory Structure
+# Directory Structure
 
 Keeping hierarchy in mind, you want to have the global resources closer to the root, regional resources next, then your applications/products/services closer to the leaf.
 
@@ -56,7 +56,7 @@ _Note: Another way to look at this: things closer to the root change less often 
 
 
 
-### One Workspace, One Module
+# One Workspace, One Module
 
 Sticking with the `global-base` module example, it's important to map each complete module with its own workspace. When I say workspace, I don't mean the `terraform workspace` command. I'm referring to where the module is called. Most of the time, people just call the module inside a `main.tf` file:
 
@@ -75,7 +75,7 @@ _Note: Create a good module README and limit the number of inputs. More inputs m
 
 
 
-### Managing Multiple Environments
+# Managing Multiple Environments
 
 Previously, you needed to create a directory structure for each AWS account you maintain. This limitation was brought on by the backend configuration: Terraform variables are not allowed inside backend values. You can use the `-backend-config` flag, but it needs to be included every time the `terraform` command runs, which can be error-prone even with a wrapper.
 
@@ -102,7 +102,7 @@ Collapsing the directories doesn't buy you fewer workspaces, but it does enforce
 
 
 
-### Drift Detection
+# Drift Detection
 
 Eventually, more engineers will work on the infrastructure, and this will cause drift from the desired IaC state. Most of the time this is unintentional: someone starts working on an update and gets pulled away before they can finish. Catching these differences is important because they can block an emergency update during an incident. Drift detection should be a priority, and you'll need tooling to identify when it happens and contact the owner.
 
@@ -110,7 +110,7 @@ Eventually, more engineers will work on the infrastructure, and this will cause 
 
 
 
-### Updates
+# Updates
 
 Updates fall into three major buckets:
 1. Terraform/OpenTofu binary updates - Binary updates used to be a bigger problem. Updates over the last several years have been smooth, but you should still read the release notes for breaking changes.
@@ -121,7 +121,7 @@ Updates fall into three major buckets:
 
 
 
-### Random Observations
+# Random Observations
 
 * Most teams start with one state per environment because it's easy and they don't know how to reference resources created in other workspaces. If you're still stuck here, look into `data sources` and [tagging](https://www.taccoform.com/posts/tfg_p2/).
 * Consumable submodules (e.g., EC2, RDS) should be updated to the most recent version any time the module/workspace is touched by an engineer. Failing to do so creates drift and more work later for someone else.
