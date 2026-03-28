@@ -13,17 +13,17 @@ locals {
     networking = {
       name      = "ordisi-networking"
       email     = "joe+ordisi-networking@ordisius.com"
-      parent_id = aws_organizations_organizational_unit.infrastructure.id
+      parent_id = aws_organizations_organizational_unit.infrastructure_prod.id
     }
     shared_services = {
       name      = "ordisi-shared-services"
       email     = "joe+ordisi-shared-services@ordisius.com"
-      parent_id = aws_organizations_organizational_unit.infrastructure.id
+      parent_id = aws_organizations_organizational_unit.infrastructure_prod.id
     }
     security = {
       name      = "ordisi-security"
       email     = "joe+ordisi-security@ordisius.com"
-      parent_id = aws_organizations_organizational_unit.security.id
+      parent_id = aws_organizations_organizational_unit.security_prod.id
     }
   }
 }
