@@ -140,3 +140,4 @@ signup
 subfolder
 tagpolicies
 userguide
+cname
