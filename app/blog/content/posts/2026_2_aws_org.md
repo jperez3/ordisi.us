@@ -21,7 +21,7 @@ hideBackToTop: true
 AWS Organizations was announced almost 10 years ago as a way to centralize the management of AWS accounts. At some point, people realized that creating environment boundaries within a single AWS account was difficult to accomplish and maintain. The proposed solution was to separate environments into AWS accounts. Production would have its own account, and so would each of the lower environments. Eventually, teams would request their own accounts. What starts as one AWS environment can balloon into tens or hundreds of accounts to maintain. Investing in AWS Organizations gives you faster AWS account provisioning, centralized governance, and centralized cost management.
 
 
-### AWS Management Account
+# AWS Management Account
 
 When starting a new AWS organization, AWS recommends creating a management account as a centralized place to manage accounts, users, and permissions. The management account should not be used for any other purpose. You can create a new management account [here](https://signin.aws.amazon.com/signup?request_type=register)
 
@@ -33,7 +33,7 @@ When starting a new AWS organization, AWS recommends creating a management accou
 
 
 
-### MFA On Root Account
+# MFA On Root Account
 
 Multi-factor authentication is extremely important for the `root` account, which has the keys to the castle (AKA your AWS organization).
 
@@ -45,7 +45,7 @@ Multi-factor authentication is extremely important for the `root` account, which
 
 
 
-### Temporary IAM account for IaC
+# Temporary IAM account for IaC
 
 You'll eventually need to create temporary AWS CLI credentials to provision resources in a more automated and consistent way. Both AWS CLI and OpenTofu require AWS access keys to create resources. We don't have AWS Identity Center set up yet, so we will need to create the account via the IAM console.
 
@@ -58,7 +58,7 @@ You'll eventually need to create temporary AWS CLI credentials to provision reso
 7. Save Access Keys to your password manager
 
 
-### Set up Terminal
+# Set up Terminal
 
 In order to start provisioning from your terminal, you will need to install and configure a couple of tools, mainly `awscli` and `opentofu`.
 
@@ -71,7 +71,7 @@ export AWS_SECRET_ACCESS_KEY="your_secret_access_key"
 export AWS_REGION="us-east-1"
 ```
 
-### S3 Bucket for IaC State
+# S3 Bucket for IaC State
 
 You will need an `s3` bucket to store the infrastructure-as-code state files, but you will not be able to manage that bucket via `opentofu` because there is nowhere to store the state yet. You could create it with a local backend, but that is kind of a waste of time. You can just create this one resource via `awscli`.
 
@@ -102,7 +102,7 @@ aws s3api put-bucket-versioning \
 ```
 
 
-### AWS Organization IaC resources
+# AWS Organization IaC resources
 
 You will now need to create a workspace to reference the `s3` bucket you just created so you can start provisioning AWS organization resources.
 
@@ -134,7 +134,6 @@ provider "aws" {
 }
 ```
 
-#### Organization
 
 You'll need to create two organization resources to get started: the organization itself and organization features. The organization resource defines the name, integration features, and enabled policy types. The organization features resource allows you to centrally manage the root account for each member account.
 
@@ -171,7 +170,7 @@ resource "aws_iam_organizations_features" "this" {
 _Note: More organization integrations exist, but some are free and others are not. It is best to research each of these integrations before adding them._
 
 
-#### Organizational Units (OUs)
+# Organizational Units (OUs)
 
 Organizational Units are essentially folders under the organization root that allow you to place AWS accounts in those folders. Policies can be attached to individual folders to provide guardrails via Service Control Policies. These OU paths can also be used in IAM policies to grant granular access to resources.
 
@@ -275,7 +274,7 @@ resource "aws_organizations_organizational_unit" "workloads_non_prod" {
 
 ```
 
-#### AWS Accounts
+# AWS Accounts
 
 As discussed earlier, we want to separate workload environments, but we also want to create centralized accounts for security and shared services.
 
@@ -305,27 +304,27 @@ locals {
   accounts = {
     prod = {
       name      = "prod"
-        email     = "joe+prod@gmail.com"
+      email     = "joe+prod@gmail.com"
       parent_id = aws_organizations_organizational_unit.workloads_prod.id
     }
     dev = {
       name      = "dev"
-        email     = "joe+dev@gmail.com"
+      email     = "joe+dev@gmail.com"
       parent_id = aws_organizations_organizational_unit.workloads_non_prod.id
     }
     networking = {
       name      = "networking"
-        email     = "joe+networking@gmail.com"
+      email     = "joe+networking@gmail.com"
       parent_id = aws_organizations_organizational_unit.infrastructure_prod.id
     }
     shared_services = {
       name      = "shared-services"
-        email     = "joe+shared-services@gmail.com"
+      email     = "joe+shared-services@gmail.com"
       parent_id = aws_organizations_organizational_unit.infrastructure_prod.id
     }
     security = {
       name      = "security"
-        email     = "joe+security@gmail.com"
+      email     = "joe+security@gmail.com"
       parent_id = aws_organizations_organizational_unit.security_prod.id
     }
   }
@@ -347,7 +346,7 @@ resource "aws_organizations_account" "this" {
 ```
 
 
-### Create Service Control Policies
+# Create Service Control Policies
 
 Service Control Policies (SCPs) are guardrails that can be applied at the organization root, Organizational Units (OUs), or individual AWS accounts. Unless you have a very good reason to apply an SCP to an individual AWS account, it is generally best practice to apply them at the root or to specific OUs. You can create a baseline that applies to all of the AWS accounts in your organization by creating an SCP and attaching it to the organization root. This can be handy for avoiding common security problems like publicly exposed `s3` buckets.
 
@@ -435,11 +434,11 @@ _Note: Only 5 SCPs can be attached to the root OU. Consolidate SCPs into a singl
 
 
 
-### Cleanup
+# Cleanup
 
 Remember to remove the `iac-mgmt` access keys and account when you are done provisioning.
 
 
-### Wrap up
+# Wrap up
 
 You now have an AWS organization set up, which will allow you to quickly create new member accounts with basic guardrails, centralized billing for all accounts, and a path forward for scaling with business needs. Next, you will need to set up AWS IAM Identity Center for centralized user management and access to organization member accounts.
