@@ -24,42 +24,6 @@ resource "aws_organizations_policy" "baseline" {
         Resource = "*"
       },
       {
-        Sid    = "DenyDisableGuardDuty"
-        Effect = "Deny"
-        Action = [
-          "guardduty:DeleteDetector",
-          "guardduty:DisassociateFromMasterAccount",
-          "guardduty:DisassociateMembers",
-          "guardduty:StopMonitoringMembers",
-          "guardduty:UpdateDetector",
-        ]
-        Resource = "*"
-      },
-      {
-        Sid    = "DenyDisableSecurityHub"
-        Effect = "Deny"
-        Action = [
-          "securityhub:BatchDisableStandards",
-          "securityhub:DeleteHub",
-          "securityhub:DisableImportFindingsForProduct",
-          "securityhub:DisableSecurityHub",
-          "securityhub:DisassociateFromMasterAccount",
-          "securityhub:DisassociateMembers",
-        ]
-        Resource = "*"
-      },
-      {
-        Sid    = "DenyDisableConfig"
-        Effect = "Deny"
-        Action = [
-          "config:DeleteConfigRule",
-          "config:DeleteConfigurationRecorder",
-          "config:DeleteDeliveryChannel",
-          "config:StopConfigurationRecorder",
-        ]
-        Resource = "*"
-      },
-      {
         Sid      = "DenyIMDSv1"
         Effect   = "Deny"
         Action   = "ec2:RunInstances"
