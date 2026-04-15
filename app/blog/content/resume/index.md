@@ -1,7 +1,7 @@
 # Joe Perez
 joe@ordisius.com • [LinkedIn](https://www.linkedin.com/in/joe--perez/) • [Github](https://github.com/jperez3) • [Portfolio](https://github.com/jperez3/ordisi.us)
 
-**Senior Site Reliability Engineer – Cloud‑Native & IaC Specialist**
+**Senior DevOps Engineer – Cloud‑Native & IaC Specialist**
 
 Results‑driven engineer with 10+ years designing, automating, and scaling cloud platforms. Expert in containerised workloads, Terraform‑based Infrastructure as Code, and cost‑optimisation strategies that have saved > $500k annually. Passionate about building resilient, developer‑centric pipelines that accelerate delivery from weeks to minutes.
 
@@ -12,7 +12,7 @@ Results‑driven engineer with 10+ years designing, automating, and scaling cl
 ### ChowNow – Senior DevOps Engineer
 _Los Angeles, CA September 2019 – December 2025_
 
-- Migrated legacy monolith to **AWS ECS Fargate**, standardising builds across 12 services and minimizing outages via automated roll‑backs.
+- Migrated legacy monolith to **AWS ECS Fargate**, standardizing builds across 12 services and minimizing outages via automated roll‑backs.
 - Optimized front‑end Docker builds with multi‑stage pipelines, reducing build time **75%** (from 12 min to 3 min).
 - Refactored mobile app builder CI pipeline to shave **80%** off build duration via Ansible tuning, enabling faster feedback loops for developers and daily releases.
 - Designed and rolled out a **Terraform workspace structure** that supports concurrent workstreams and reduces blast radius for unrelated services
@@ -42,16 +42,16 @@ _Los Angeles, CA August 2016-August 2019_
 
 ## Technical Skills
 
-| Category               | Tools & Services                                                 | Proficiency |
-|------------------------|------------------------------------------------------------------|-------------|
-| **Cloud Platforms**    | AWS (ECS Fargate, RDS, SSM, Secrets Manager, DMS, Patch Manager) | ★★★★★       |
-| **Containers**         | Docker, AWS ECS Fargate                                          | ★★★★☆       |
-| **IaC & Automation**   | Terraform, Ansible, Packer                                       | ★★★★★       |
-| **CI/CD**              | GitHub Actions, Jenkins                                          | ★★★★★       |
-| **Monitoring**         | Datadog, CloudWatch, Grafana                                     | ★★★★☆       |
-| **Security**           | Cloudflare WAF/CDN, IAM, PCI‑DSS practices                       | ★★★★☆       |
-| **Scripting**          | Bash, Python                                                     | ★★★★☆       |
-| **Load Testing**       | Locust                                                           | ★★★★☆       |
+| Category               | Tools & Services                                                 |
+|------------------------|------------------------------------------------------------------|
+| **Cloud Platforms**    | AWS (ECS Fargate, RDS, SSM, Secrets Manager, DMS, Patch Manager) |
+| **Containers**         | Docker, AWS ECS Fargate                                          |
+| **IaC & Automation**   | Terraform, Ansible, Packer                                       |
+| **CI/CD**              | GitHub Actions, Jenkins                                          |
+| **Monitoring**         | Datadog, CloudWatch, Grafana                                     |
+| **Security**           | Cloudflare WAF/CDN, IAM, PCI‑DSS practices                       |
+| **Scripting**          | Bash, Python                                                     |
+| **Load Testing**       | Locust                                                           |
 
 ---
 
@@ -68,6 +68,7 @@ _Los Angeles, CA August 2016-August 2019_
 - **taccoform.com – Main Contributor** \
   Created and maintained the [taccoform.com](https://www.taccoform.com) site as a community hub for sharing Terraform learnings, patterns, and reusable modules.
   - Authored over 25 detailed blog posts covering advanced Terraform concepts, module design, and best‑practice workflows.
+- **Hashicorp Ambassador - 2022-2023**
 
 
 ---
