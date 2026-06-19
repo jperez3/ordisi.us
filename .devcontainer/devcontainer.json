@@ -14,7 +14,7 @@
 		"ghcr.io/devcontainers-extra/features/terraform-docs:1": {},
 		"ghcr.io/prulloac/devcontainer-features/pre-commit:1": {},
 		"ghcr.io/dhoeric/features/trivy:1": {},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+		"ghcr.io/devcontainers/features/docker-in-docker:3": {
 			"moby": false
 		},
 		"ghcr.io/devcontainers/features/common-utils:2": {
