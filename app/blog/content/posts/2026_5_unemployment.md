@@ -2,7 +2,7 @@
 title: "Surviving The First 6 Months Of Unemployment"
 author: "Joe"
 authorAvatarPath: "images/avatar.jpg"
-date: "2026-07-28"
+date: "2026-07-27"
 summary: "The unemployment guide I wish I had"
 description: "The unemployment guide I wish I had"
 toc: false
@@ -13,7 +13,7 @@ tags: ["layoffs", "tech", "unemployment"]
 showTags: false
 hideBackToTop: true
 ---
-![tiramisu](https://static.taccoform.com/header_ord_072826.jpg)
+![tiramisu](https://static.taccoform.com/header_ord_072726.jpg)
 
 
 
