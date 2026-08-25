@@ -10,5 +10,11 @@ module "org_idc" {
       email       = "joe@ordisius.com"
       groups      = ["devs"]
     }
+    "joe.devops" = {
+      given_name  = "Joe"
+      family_name = "Devops"
+      email       = "joe+devopsuser@ordisius.com"
+      groups      = ["devops"]
+    }
   }
 }
