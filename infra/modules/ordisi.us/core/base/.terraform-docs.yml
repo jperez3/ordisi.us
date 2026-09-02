@@ -1,0 +1,13 @@
+formatter: "markdown"
+
+header-from: docs/header.md
+
+sections:
+
+output:
+  file: README.md
+  mode: replace
+
+sort:
+  enabled: true
+  by: name

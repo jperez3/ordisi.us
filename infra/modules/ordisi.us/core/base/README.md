@@ -1,6 +1,24 @@
-# base
-
 <!-- BEGIN_TF_DOCS -->
+# Core Base Module
+
+## Introduction
+
+Description: a core module which deploys a VPC and supporting infrastructure
+
+## Example
+
+```hcl
+module "core_base" {
+  source = "../../../modules/ordisi.us/core/base"
+
+  name = "primary"
+  env  = var.env
+
+  enable_jumpbox_instance = true
+
+}
+```
+
 ## Requirements
 
 No requirements.
@@ -13,7 +31,7 @@ No providers.
 
 | Name | Source | Version |
 | ---- | ------ | ------- |
-| <a name="module_vpc_lower"></a> [vpc\_lower](#module\_vpc\_lower) | git::git@github.com:jperez3/ordisi.us.git//infra/vendor/aws/vpc/lower?depth=1&ref=aws-vpc-lower-v1.0.0 | n/a |
+| <a name="module_vpc_lower"></a> [vpc\_lower](#module\_vpc\_lower) | git::git@github.com:jperez3/ordisi.us.git//infra/modules/vendor/aws/vpc/lower?depth=1&ref=aws-vpc-lower-v1.0.0 | n/a |
 
 ## Resources
 
