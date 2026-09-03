@@ -5,7 +5,7 @@ on:
       - main
   pull_request:
     paths:
-      - infra/workspaces/**
+      - infra/workspaces/app/blog
 
 env:
   WORKING_DIR: infra/workspaces/app/blog
