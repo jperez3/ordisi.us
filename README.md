@@ -10,25 +10,39 @@
 
 ```bash
 .
-├── app                     # application code
-│   └── blog                # hugo site
+├── app                         # application code
+│   └── blog                    # hugo site
 │       ├── archetypes
 │       ├── assets
 │       ├── content
-│       │   └── posts       # markdown based blog posts go here
+│       │   └── posts           # markdown based blog posts go here
 │       ├── data
 │       ├── i18n
 │       ├── layouts
-│       ├── public          # built hugo site
+│       ├── public              # built hugo site
 │       ├── resources
 │       ├── static
 │       └── themes
 │           └── typo
-└── infra                   # infrastructure code
+└── infra                       # infrastructure code
+    ├── modules
+    │   ├── ordisi.us           # composed IaC modules
+    │   │   ├── core
+    │   │   │   └── base
+    │   │   └── org
+    │   │       ├── base
+    │   │       └── idc
+    │   └── vendor              # cloud service provider modules
+    │       └── aws
+    │           └── vpc
+    │               └── lower   # cost optimized VPC module
+    ├── scripts                 # infra helper scripts
     └── workspaces
         ├── app
-        │   └── blog        # resources to support hugo site
-        └── global          # dns and other global level resources
+        │   └── blog            # resources to support hugo site
+        ├── core
+        │   └── base            # VPC and other supporting resources
+        └── global              # dns and other global level resources
 ```
 
 ## Local Dev
@@ -110,12 +124,6 @@ Github actions will trigger a workflow which will initialize the workspace and o
 * Description: The Cloudflare pages infrastructure is managed by OpenTofu (Terraform.) When a PR is created, an approval to start the workflow is required (an extra precaution for a public repo), then the workflow will checkout the code, navigate to the workspace, initialize the infrastructure, run a plan, and post the pending changes as a comment on the PR. After the PR has been reviewed and merged to `main`, the workflow will run again and apply the changes.
 
 
-### Spellcheck
-
-* Workflow name: `markdown_spellcheck.yaml`
-* Description: When a PR is created, this workflow will run a spellcheck on changes to markdown files. If there are spelling mistakes, the job will fail. If a word causes a failure, but is not actually a typo, it can be added to `.spellcheck-wordlist.txt`
-
-
 ## Tools
 
 #### Dev Containers
@@ -136,5 +144,4 @@ Github actions will trigger a workflow which will initialize the workspace and o
 
 ### Resources
 
-* [GHA - Spellcheck](https://github.com/rojopolis/spellcheck-github-actions)
 * [GHA - Changed Files](https://github.com/tj-actions/changed-files)
