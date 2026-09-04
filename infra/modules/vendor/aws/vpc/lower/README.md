@@ -12,8 +12,8 @@ The following is a list of features available with this module:
 ## Example
 
 ```hcl
-module "fck-nat" {
-  source = "git::https://github.com/jperez3/terraform-aws-fck-nat.git"
+module "vpc_lower" {
+  source = "git::git@github.com:jperez3/ordisi.us.git//infra/modules/vendor/aws/vpc/lower?depth=1&ref=aws-vpc-lower-v1.0.1"
 
   env  = "dev"
   name = "primary"
@@ -79,6 +79,7 @@ module "fck-nat" {
 | [aws_subnet.private](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_subnet.public](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_vpc.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
+| [aws_vpc_endpoint.s3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_endpoint) | resource |
 | [time_sleep.wait_for_iam](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
 | [aws_ami.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami) | data source |
 | [aws_arn.ssm_param](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/arn) | data source |
@@ -111,6 +112,7 @@ module "fck-nat" {
 | <a name="input_enable_athena"></a> [enable\_athena](#input\_enable\_athena) | Create a Glue Catalog database/table for querying VPC flow logs (parquet, hive-partitioned) via Amazon Athena | `bool` | `false` | no |
 | <a name="input_enable_health_alarms"></a> [enable\_health\_alarms](#input\_enable\_health\_alarms) | Whether to create CloudWatch alarms for NAT instance ASG health (one per AZ, alarming when the ASG has 0 in-service instances) | `bool` | `true` | no |
 | <a name="input_enable_jumpbox_instance"></a> [enable\_jumpbox\_instance](#input\_enable\_jumpbox\_instance) | Creates jumpbox instance to access resources in the VPC (SSM only) | `bool` | `false` | no |
+| <a name="input_enable_vpc_endpoint_s3"></a> [enable\_vpc\_endpoint\_s3](#input\_enable\_vpc\_endpoint\_s3) | enables/disables S3 VPC endpoint | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | environment name | `string` | n/a | yes |
 | <a name="input_ha_additional_instance_types"></a> [ha\_additional\_instance\_types](#input\_ha\_additional\_instance\_types) | List of additional instance types to pass to the ASG, helpful when using spot instances with low availabiltiy | `list(string)` | `[]` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type to use for the NAT instance | `string` | `"t4g.micro"` | no |
@@ -145,7 +147,7 @@ The following is a list of features available with this module:
 
 ```hcl
 module "vpc_lower" {
-  source = "git::https://github.com/jperez3/terraform-aws-fck-nat.git"
+  source = "git::git@github.com:jperez3/ordisi.us.git//infra/modules/vendor/aws/vpc/lower?depth=1&ref=aws-vpc-lower-v1.0.1"
 
   env  = "dev"
   name = "primary"
@@ -211,6 +213,7 @@ module "vpc_lower" {
 | [aws_subnet.private](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_subnet.public](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_vpc.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
+| [aws_vpc_endpoint.s3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_endpoint) | resource |
 | [time_sleep.wait_for_iam](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
 | [aws_ami.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami) | data source |
 | [aws_arn.ssm_param](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/arn) | data source |
@@ -243,6 +246,7 @@ module "vpc_lower" {
 | <a name="input_enable_athena"></a> [enable\_athena](#input\_enable\_athena) | Create a Glue Catalog database/table for querying VPC flow logs (parquet, hive-partitioned) via Amazon Athena | `bool` | `false` | no |
 | <a name="input_enable_health_alarms"></a> [enable\_health\_alarms](#input\_enable\_health\_alarms) | Whether to create CloudWatch alarms for NAT instance ASG health (one per AZ, alarming when the ASG has 0 in-service instances) | `bool` | `true` | no |
 | <a name="input_enable_jumpbox_instance"></a> [enable\_jumpbox\_instance](#input\_enable\_jumpbox\_instance) | Creates jumpbox instance to access resources in the VPC (SSM only) | `bool` | `false` | no |
+| <a name="input_enable_vpc_endpoint_s3"></a> [enable\_vpc\_endpoint\_s3](#input\_enable\_vpc\_endpoint\_s3) | enables/disables S3 VPC endpoint | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | environment name | `string` | n/a | yes |
 | <a name="input_ha_additional_instance_types"></a> [ha\_additional\_instance\_types](#input\_ha\_additional\_instance\_types) | List of additional instance types to pass to the ASG, helpful when using spot instances with low availabiltiy | `list(string)` | `[]` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type to use for the NAT instance | `string` | `"t4g.micro"` | no |
