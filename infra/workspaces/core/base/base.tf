@@ -4,6 +4,6 @@ module "core_base" {
   name = "primary"
   env  = var.env
 
-  enable_jumpbox_instance = true
+  #   enable_jumpbox_instance = true
 
 }
