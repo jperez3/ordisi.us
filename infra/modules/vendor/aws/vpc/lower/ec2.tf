@@ -124,14 +124,17 @@ resource "time_sleep" "wait_for_iam" {
 resource "aws_autoscaling_group" "nat_instance" {
   for_each = local.asg_az_subnets
 
-  region = local.region
+  name = "${local.name}-${each.key}"
+  # intentional for associating the ENI with a NAT instance
+  max_size                  = 1
+  min_size                  = 1
+  desired_capacity          = 1
+  default_instance_warmup   = 60
+  health_check_type         = "EC2"
+  health_check_grace_period = 60
+  vpc_zone_identifier       = [each.value]
 
-  name                = "${local.name}-${each.key}"
-  max_size            = 1
-  min_size            = 1
-  desired_capacity    = 1
-  health_check_type   = "EC2"
-  vpc_zone_identifier = [each.value]
+  capacity_rebalance = var.use_spot_instances ? true : false
 
   mixed_instances_policy {
     instances_distribution {
