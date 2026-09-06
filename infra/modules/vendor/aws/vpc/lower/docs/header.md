@@ -13,7 +13,7 @@ The following is a list of features available with this module:
 
 ```hcl
 module "vpc_lower" {
-  source = "git::git@github.com:jperez3/ordisi.us.git//infra/modules/vendor/aws/vpc/lower?depth=1&ref=aws-vpc-lower-v1.0.1"
+  source = "git::git@github.com:jperez3/ordisi.us.git//infra/modules/vendor/aws/vpc/lower?depth=1&ref=aws-vpc-lower-v1.0.2"
 
   env  = "dev"
   name = "primary"

@@ -31,7 +31,7 @@ No providers.
 
 | Name | Source | Version |
 | ---- | ------ | ------- |
-| <a name="module_vpc_lower"></a> [vpc\_lower](#module\_vpc\_lower) | git::git@github.com:jperez3/ordisi.us.git//infra/modules/vendor/aws/vpc/lower?depth=1&ref=aws-vpc-lower-v1.0.1 | n/a |
+| <a name="module_vpc_lower"></a> [vpc\_lower](#module\_vpc\_lower) | git::git@github.com:jperez3/ordisi.us.git//infra/modules/vendor/aws/vpc/lower?depth=1&ref=aws-vpc-lower-v1.0.2 | n/a |
 
 ## Resources
 
