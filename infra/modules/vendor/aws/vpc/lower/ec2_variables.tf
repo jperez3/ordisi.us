@@ -19,7 +19,8 @@ variable "instance_type" {
 variable "ha_additional_instance_types" {
   description = "List of additional instance types to pass to the ASG, helpful when using spot instances with low availabiltiy"
   type        = list(string)
-  default     = []
+  # cheapest t4g sizes, kept arm64 to match the AMI architecture derived from var.instance_type
+  default = ["t4g.nano", "t4g.small"]
 }
 
 variable "ami_id" {

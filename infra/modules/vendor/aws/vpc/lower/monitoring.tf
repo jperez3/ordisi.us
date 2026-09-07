@@ -29,9 +29,9 @@ resource "aws_cloudwatch_metric_alarm" "nat_instance_down" {
   namespace           = "AWS/AutoScaling"
   metric_name         = "GroupInServiceInstances"
   statistic           = "Minimum"
-  period              = 60
+  period              = 300
   evaluation_periods  = 5
-  datapoints_to_alarm = 3
+  datapoints_to_alarm = 4
   threshold           = 1
   comparison_operator = "LessThanThreshold"
   treat_missing_data  = "notBreaching"
