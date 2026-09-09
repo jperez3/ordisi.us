@@ -1,10 +1,10 @@
 ---
-title: "Low cost lower AWS Environemnts"
+title: "Cheap Lower Environment VPCs"
 author: "Joe"
 authorAvatarPath: "images/avatar.jpg"
 date: "2026-09-09"
-summary: "Replacing NAT Gateway with fck-nat"
-description: "Replacing NAT Gateway with fck-nat"
+summary: "Replacing NAT Gateway with fck-nat ASGs"
+description: "Replacing NAT Gateway with fck-nat ASGs"
 toc: false
 readTime: true
 autonumber: true
